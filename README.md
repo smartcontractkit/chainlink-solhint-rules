@@ -2,14 +2,20 @@
 
 A set of Solhint rules for Chainlink's Solidity Style Guide.
 
-## Usage
+[You can find a working Foundry example here](https://github.com/smartcontractkit/chainlink-solhint-rules-example).
 
-Create a `.solhint.json` with `npx solhint init-config` and fill that file with the following:
+## Install to a new project
+
+```
+npm init && npm install solhint https://github.com/smartcontractkit/chainlink-solhint-rules --save
+```
+
+Create a `.solhint.json` in your root project directory:
 
 ```
 {
   "extends": "solhint:recommended",
-  "plugins": ["prettier", "chainlink-solidity"],
+  "plugins": ["chainlink-solidity"],
   "rules": {
     "compiler-version": ["off", "^0.7.0"],
     "const-name-snakecase": "off",
@@ -23,12 +29,6 @@ Create a `.solhint.json` with `npx solhint init-config` and fill that file with 
     ],
     "max-line-length": ["error", 160],
     "not-rely-on-time": "off",
-    "prettier/prettier": [
-      "off",
-      {
-        "endOfLine": "auto"
-      }
-    ],
     "no-empty-blocks": "off",
     "quotes": ["error", "single"],
     "reason-string": [
@@ -50,3 +50,38 @@ Create a `.solhint.json` with `npx solhint init-config` and fill that file with 
   }
 }
 ```
+
+Add the following to your `package.json`:
+
+```
+  "scripts": {
+    "solhint": "solhint --config .solhint.json \"src/*.sol\""
+  },
+```
+
+Then, run:
+
+```
+npm solhint
+
+src/Counter.sol
+  4:1  warning  Internal function increment is not prefixed with underscore (_)  chainlink-solidity/prefix-internal-functions-with-underscore
+  4:1  warning  Private / internal variable number is not prefixed with s_       chainlink-solidity/prefix-storage-variables-with-s-underscore
+  8:9  warning  Use custom errors instead of revert statements                   chainlink-solidity/no-require-statements
+  8:9  warning  Provide an error message for require                             reason-string
+```
+
+## Rules
+
+| Rule Id                                                 | Description                                                                           |
+|---------------------------------------------------------|---------------------------------------------------------------------------------------|
+| `prefix-internal-functions-with-underscore`             | Naming convention                                                                     |
+| `prefix-private-functions-with-underscore`              | Naming convention                                                                     |
+| `prefix-storage-variables-with-s-underscore`            | Naming convention                                                                     |
+| `prefix-immutable-variables-with-i`                     | Naming convention                                                                     |
+| `all-caps-constant-storage-variables`                   | Naming convention                                                                     |
+| `no-hardhat-imports`                                    | Leftover `hardhat/*.sol` imports not allowed                                          |
+| `inherited-constructor-args-not-in-contract-definition` | Inherited contract constructor arguments should be specified in the constructor block |
+| `explicit-imports`                                      | import {Foo} from 'Foo.sol'                                                           |
+| `no-require-statements`                                 | Use custom errors instead                                                             |
+| `no-block-single-if-reverts`                            | Omit curly braces for single-line guard clauses                                       |
