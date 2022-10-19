@@ -13,15 +13,22 @@ class PrefixStorageVariablesWithSUnderscore {
       const { type } = subNode;
       if (type === 'StateVariableDeclaration') {
         for (let variable of subNode.variables) {
-          const { type, visibility, isDeclaredConst, isImmutable, name } = variable;
+          const { type, visibility, isDeclaredConst, isImmutable, name } =
+            variable;
           if (
             type === 'VariableDeclaration' &&
             !isDeclaredConst && // const variables ignored
             !isImmutable && // immutable variables ignored
-            PrefixStorageVariablesWithSUnderscore.applicableVisibilities.includes(visibility) &&
+            PrefixStorageVariablesWithSUnderscore.applicableVisibilities.includes(
+              visibility
+            ) &&
             !name.startsWith('s_')
           ) {
-            this.reporter.error(ctx, this.ruleId, `Private / internal variable ${name} is not prefixed with s_`);
+            this.reporter.error(
+              subNode,
+              this.ruleId,
+              `Private / internal variable ${name} is not prefixed with s_`
+            );
           }
         }
       }

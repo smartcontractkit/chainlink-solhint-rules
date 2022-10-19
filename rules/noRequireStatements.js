@@ -8,7 +8,10 @@ class NoRequireStatements {
   ContractDefinition(ctx) {
     const { subNodes } = ctx;
     for (let subNode of subNodes) {
-      if (subNode.type === 'FunctionDefinition' || subNode.type === 'ModifierDefinition') {
+      if (
+        subNode.type === 'FunctionDefinition' ||
+        subNode.type === 'ModifierDefinition'
+      ) {
         this.checkForRequireStatement(JSON.parse(JSON.stringify(subNode)));
       }
     }
@@ -17,8 +20,16 @@ class NoRequireStatements {
   checkForRequireStatement(node) {
     switch (node.type) {
       case 'ExpressionStatement':
-        if (node.expression && node.expression.expression && node.expression.expression.name === 'require') {
-          this.reporter.error(node, this.ruleId, `Use custom errors instead of revert statements`);
+        if (
+          node.expression &&
+          node.expression.expression &&
+          node.expression.expression.name === 'require'
+        ) {
+          this.reporter.error(
+            node,
+            this.ruleId,
+            `Use custom errors instead of revert statements`
+          );
         }
         return;
       case 'IfStatement':

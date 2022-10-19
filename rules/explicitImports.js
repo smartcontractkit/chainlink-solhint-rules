@@ -8,7 +8,11 @@ class ExplicitImports {
   ImportDirective(ctx) {
     const { symbolAliases, path } = ctx;
     if (symbolAliases == null) {
-      this.reporter.error(ctx, this.ruleId, `Import "${path}" must explicitly import types from the imported file.`);
+      this.reporter.error(
+        ctx,
+        this.ruleId,
+        `Import "${path}" must explicitly import types from the imported file.`
+      );
     }
   }
 }

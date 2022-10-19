@@ -12,11 +12,15 @@ class AllCapsConstantStorageVariables {
       if (type === 'StateVariableDeclaration') {
         for (let variable of subNode.variables) {
           const { type, isDeclaredConst, name } = variable;
-          if (type === 'VariableDeclaration' && isDeclaredConst && name.toUpperCase() !== name) {
+          if (
+            type === 'VariableDeclaration' &&
+            isDeclaredConst &&
+            name.toUpperCase() !== name
+          ) {
             this.reporter.error(
-              ctx,
+              subNode,
               this.ruleId,
-              `Constant variable ${name} is not in all caps, it should be ${name.toUpperCase()}`,
+              `Constant variable ${name} is not in all caps, it should be ${name.toUpperCase()}`
             );
           }
         }

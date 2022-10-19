@@ -9,8 +9,16 @@ class PrefixInternalFunctionsWithUnderscore {
     const { subNodes } = ctx;
     for (let subNode of subNodes) {
       const { type, visibility, name } = subNode;
-      if (type === 'FunctionDefinition' && visibility === 'internal' && !name.startsWith('_')) {
-        this.reporter.error(ctx, this.ruleId, `Internal function ${name} is not prefixed with underscore (_)`);
+      if (
+        type === 'FunctionDefinition' &&
+        visibility === 'internal' &&
+        !name.startsWith('_')
+      ) {
+        this.reporter.error(
+          subNode,
+          this.ruleId,
+          `Internal function ${name} is not prefixed with underscore (_)`
+        );
       }
     }
   }

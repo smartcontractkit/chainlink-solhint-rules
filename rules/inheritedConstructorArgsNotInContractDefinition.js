@@ -10,9 +10,9 @@ class InheritedConstructorArgsNotInContractDefinition {
     for (let baseContract of baseContracts) {
       if (baseContract.arguments.length > 0) {
         this.reporter.error(
-          ctx,
+          baseContract,
           this.ruleId,
-          `Inherited contract constructor arguments for ${baseContract.baseName.namePath} should be passed in the constructor definition, not the contract definition`,
+          `Inherited contract constructor arguments for ${baseContract.baseName.namePath} should be passed in the constructor definition, not the contract definition`
         );
       }
     }

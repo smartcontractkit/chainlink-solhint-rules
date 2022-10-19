@@ -18,7 +18,11 @@ class PrefixImmutableVariablesWithI {
             isImmutable && // immutable variables only
             !name.startsWith('i_')
           ) {
-            this.reporter.error(ctx, this.ruleId, `Immutable variable ${name} is not prefixed with 'i_'`);
+            this.reporter.error(
+              subNode,
+              this.ruleId,
+              `Immutable variable ${name} is not prefixed with 'i_'`
+            );
           }
         }
       }
