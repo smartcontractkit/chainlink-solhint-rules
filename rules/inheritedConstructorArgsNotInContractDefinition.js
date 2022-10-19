@@ -1,6 +1,6 @@
 class InheritedConstructorArgsNotInContractDefinition {
   constructor(reporter, config) {
-    this.ruleId = "inherited-constructor-args-not-in-contract-definition";
+    this.ruleId = 'inherited-constructor-args-not-in-contract-definition';
     this.reporter = reporter;
     this.config = config;
   }

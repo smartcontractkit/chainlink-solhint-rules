@@ -8,7 +8,11 @@ class NoHardhatImports {
   ImportDirective(ctx) {
     const { path } = ctx;
     if (path.startsWith('hardhat')) {
-      this.reporter.error(ctx, this.ruleId, `Hardhat import ${path} not allowed`);
+      this.reporter.error(
+        ctx,
+        this.ruleId,
+        `Hardhat import ${path} not allowed`
+      );
     }
   }
 }

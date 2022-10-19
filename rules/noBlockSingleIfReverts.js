@@ -28,11 +28,13 @@ class NoBlockSingleIfReverts {
         this.reporter.error(
           trueBody.statements[0],
           this.ruleId,
-          'If statements with only a single revert expression must not be in a block.',
+          'If statements with only a single revert expression must not be in a block.'
         );
       } else {
-        if (trueBody && trueBody.statements) this.checkBodyStatements(trueBody.statements);
-        if (falseBody && falseBody.statements) this.checkBodyStatements(falseBody.statements);
+        if (trueBody && trueBody.statements)
+          this.checkBodyStatements(trueBody.statements);
+        if (falseBody && falseBody.statements)
+          this.checkBodyStatements(falseBody.statements);
       }
     } else if (body && body.statements) {
       this.checkBodyStatements(body.statements);

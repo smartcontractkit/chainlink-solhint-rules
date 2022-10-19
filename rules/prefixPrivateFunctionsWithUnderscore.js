@@ -1,6 +1,6 @@
 class PrefixPrivateFunctionsWithUnderscore {
   constructor(reporter, config) {
-    this.ruleId = "prefix-private-functions-with-underscore";
+    this.ruleId = 'prefix-private-functions-with-underscore';
     this.reporter = reporter;
     this.config = config;
   }
@@ -10,9 +10,9 @@ class PrefixPrivateFunctionsWithUnderscore {
     for (let subNode of subNodes) {
       const { type, visibility, name } = subNode;
       if (
-        type === "FunctionDefinition" &&
-        visibility === "private" &&
-        !name.startsWith("_")
+        type === 'FunctionDefinition' &&
+        visibility === 'private' &&
+        !name.startsWith('_')
       ) {
         this.reporter.error(
           subNode,

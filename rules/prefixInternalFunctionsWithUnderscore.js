@@ -1,6 +1,6 @@
 class PrefixInternalFunctionsWithUnderscore {
   constructor(reporter, config) {
-    this.ruleId = "prefix-internal-functions-with-underscore";
+    this.ruleId = 'prefix-internal-functions-with-underscore';
     this.reporter = reporter;
     this.config = config;
   }
@@ -10,9 +10,9 @@ class PrefixInternalFunctionsWithUnderscore {
     for (let subNode of subNodes) {
       const { type, visibility, name } = subNode;
       if (
-        type === "FunctionDefinition" &&
-        visibility === "internal" &&
-        !name.startsWith("_")
+        type === 'FunctionDefinition' &&
+        visibility === 'internal' &&
+        !name.startsWith('_')
       ) {
         this.reporter.error(
           subNode,
