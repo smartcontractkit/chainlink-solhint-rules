@@ -1,6 +1,6 @@
 class PrefixPrivateFunctionsWithUnderscore {
   constructor(reporter, config) {
-    this.ruleId = 'prefix-private-functions-with-underscore';
+    this.ruleId = "prefix-private-functions-with-underscore";
     this.reporter = reporter;
     this.config = config;
   }
@@ -9,8 +9,16 @@ class PrefixPrivateFunctionsWithUnderscore {
     const { subNodes } = ctx;
     for (let subNode of subNodes) {
       const { type, visibility, name } = subNode;
-      if (type === 'FunctionDefinition' && visibility === 'private' && !name.startsWith('_')) {
-        this.reporter.error(ctx, this.ruleId, `Private function ${name} is not prefixed with underscore (_)`);
+      if (
+        type === "FunctionDefinition" &&
+        visibility === "private" &&
+        !name.startsWith("_")
+      ) {
+        this.reporter.error(
+          subNode,
+          this.ruleId,
+          `Private function ${name} is not prefixed with underscore (_)`
+        );
       }
     }
   }

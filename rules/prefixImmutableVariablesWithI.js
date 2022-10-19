@@ -1,6 +1,6 @@
 class PrefixImmutableVariablesWithI {
   constructor(reporter, config) {
-    this.ruleId = 'prefix-immutable-variables-with-i';
+    this.ruleId = "prefix-immutable-variables-with-i";
     this.reporter = reporter;
     this.config = config;
   }
@@ -9,16 +9,20 @@ class PrefixImmutableVariablesWithI {
     const { subNodes } = ctx;
     for (let subNode of subNodes) {
       const { type } = subNode;
-      if (type === 'StateVariableDeclaration') {
+      if (type === "StateVariableDeclaration") {
         for (let variable of subNode.variables) {
           const { type, visibility, isImmutable, name } = variable;
           if (
-            type === 'VariableDeclaration' &&
+            type === "VariableDeclaration" &&
             visibility &&
             isImmutable && // immutable variables only
-            !name.startsWith('i_')
+            !name.startsWith("i_")
           ) {
-            this.reporter.error(ctx, this.ruleId, `Immutable variable ${name} is not prefixed with 'i_'`);
+            this.reporter.error(
+              subNode,
+              this.ruleId,
+              `Immutable variable ${name} is not prefixed with 'i_'`
+            );
           }
         }
       }
