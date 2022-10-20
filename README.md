@@ -7,7 +7,7 @@ A set of Solhint rules for Chainlink's Solidity Style Guide.
 ## Install to a new project
 
 ```
-npm init && npm install solhint https://github.com/smartcontractkit/chainlink-solhint-rules --save
+npm init && npm install solhint solhint-plugin-chainlink-solidity@npm:@chainlink/solhint-plugin-chainlink-solidity --save
 ```
 
 Create a `.solhint.json` in your root project directory:
