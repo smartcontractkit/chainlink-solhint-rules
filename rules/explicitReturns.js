@@ -51,14 +51,14 @@ class ExplicitReturns {
       this.reporter.error(
         ctx,
         this.ruleId,
-        `Return statements must be written and must explicitly return something; maybe "return ${returnExprGen(namedReturns)};"?`);
+        `Return statements must be written and must explicitly return something; consider "return ${returnExprGen(namedReturns)};"?`);
       return;
     }
     if (!hasReturnExpression) {
       this.reporter.error(
         ctx,
         this.ruleId,
-        `Return statements must explicitly return something; maybe "return ${returnExprGen(namedReturns)};"?`);
+        `Return statements must explicitly return something; consider "return ${returnExprGen(namedReturns)};"?`);
       return;
     }
   }
