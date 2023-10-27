@@ -6,8 +6,6 @@ const PrefixImmutableVariablesWithI = require('./rules/prefixImmutableVariablesW
 const AllCapsConstantStorageVariables = require('./rules/allCapsConstantStorageVariables.js');
 const NoHardhatImports = require('./rules/noHardhatImports.js');
 const InheritedConstructorArgsNotInContractDefinition = require('./rules/inheritedConstructorArgsNotInContractDefinition.js');
-const ExplicitImports = require('./rules/explicitImports.js');
-const NoRequireStatements = require('./rules/noRequireStatements.js');
 const NoBlockSingleIfReverts = require('./rules/noBlockSingleIfReverts.js');
 const ExplicitReturns = require('./rules/explicitReturns.js');
 
@@ -19,8 +17,6 @@ module.exports = [
   AllCapsConstantStorageVariables,
   NoHardhatImports,
   InheritedConstructorArgsNotInContractDefinition,
-  ExplicitImports,
-  NoRequireStatements,
   NoBlockSingleIfReverts,
   ExplicitReturns,
 ];

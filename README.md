@@ -17,7 +17,7 @@ Create a `.solhint.json` in your root project directory:
   "extends": "solhint:recommended",
   "plugins": ["chainlink-solidity"],
   "rules": {
-    "compiler-version": ["off", "^0.7.0"],
+    "compiler-version": ["off", "^0.8.0"],
     "const-name-snakecase": "off",
     "constructor-syntax": "error",
     "var-name-mixedcase": "off",
@@ -44,8 +44,6 @@ Create a `.solhint.json` in your root project directory:
     "chainlink-solidity/all-caps-constant-storage-variables": "warn",
     "chainlink-solidity/no-hardhat-imports": "warn",
     "chainlink-solidity/inherited-constructor-args-not-in-contract-definition": "warn",
-    "chainlink-solidity/explicit-imports": "warn",
-    "chainlink-solidity/no-require-statements": "warn",
     "chainlink-solidity/no-block-single-if-reverts": "warn",
     "chainlink-solidity/explicit-returns": "warn"
   }
@@ -68,7 +66,6 @@ npm solhint
 src/Counter.sol
   4:1  warning  Internal function increment is not prefixed with underscore (_)  chainlink-solidity/prefix-internal-functions-with-underscore
   4:1  warning  Private / internal variable number is not prefixed with s_       chainlink-solidity/prefix-storage-variables-with-s-underscore
-  8:9  warning  Use custom errors instead of revert statements                   chainlink-solidity/no-require-statements
   8:9  warning  Provide an error message for require                             reason-string
 ```
 
@@ -83,7 +80,5 @@ src/Counter.sol
 | `all-caps-constant-storage-variables`                   | Naming convention                                                                     |
 | `no-hardhat-imports`                                    | Leftover `hardhat/*.sol` imports not allowed                                          |
 | `inherited-constructor-args-not-in-contract-definition` | Inherited contract constructor arguments should be specified in the constructor block |
-| `explicit-imports`                                      | import {Foo} from 'Foo.sol'                                                           |
-| `no-require-statements`                                 | Use custom errors instead                                                             |
 | `no-block-single-if-reverts`                            | Omit curly braces for single-line guard clauses                                       |
 | `explicit-returns`                                      | Always specify an expression after a `return`                                         |
