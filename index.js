@@ -9,6 +9,7 @@ const InheritedConstructorArgsNotInContractDefinition = require('./rules/inherit
 const ExplicitImports = require('./rules/explicitImports.js');
 const NoRequireStatements = require('./rules/noRequireStatements.js');
 const NoBlockSingleIfReverts = require('./rules/noBlockSingleIfReverts.js');
+const ExplicitReturns = require('./rules/explicitReturns.js');
 
 module.exports = [
   PrefixInternalFunctionsWithUnderscore,
@@ -21,4 +22,5 @@ module.exports = [
   ExplicitImports,
   NoRequireStatements,
   NoBlockSingleIfReverts,
+  ExplicitReturns,
 ];

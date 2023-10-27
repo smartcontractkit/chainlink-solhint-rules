@@ -46,7 +46,8 @@ Create a `.solhint.json` in your root project directory:
     "chainlink-solidity/inherited-constructor-args-not-in-contract-definition": "warn",
     "chainlink-solidity/explicit-imports": "warn",
     "chainlink-solidity/no-require-statements": "warn",
-    "chainlink-solidity/no-block-single-if-reverts": "warn"
+    "chainlink-solidity/no-block-single-if-reverts": "warn",
+    "chainlink-solidity/explicit-returns": "warn"
   }
 }
 ```
@@ -85,3 +86,4 @@ src/Counter.sol
 | `explicit-imports`                                      | import {Foo} from 'Foo.sol'                                                           |
 | `no-require-statements`                                 | Use custom errors instead                                                             |
 | `no-block-single-if-reverts`                            | Omit curly braces for single-line guard clauses                                       |
+| `explicit-returns`                                      | Always specify an expression after a `return`                                         |
