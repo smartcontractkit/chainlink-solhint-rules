@@ -3,6 +3,9 @@ class AllCapsConstantStorageVariables {
     this.ruleId = 'all-caps-constant-storage-variables';
     this.reporter = reporter;
     this.config = config;
+    this.overrides = new Set([
+      "typeAndVersion"
+    ]);
   }
 
   ContractDefinition(ctx) {
@@ -15,6 +18,7 @@ class AllCapsConstantStorageVariables {
           if (
             type === 'VariableDeclaration' &&
             isDeclaredConst &&
+            !this.overrides.has(name) &&
             name.toUpperCase() !== name
           ) {
             this.reporter.error(
