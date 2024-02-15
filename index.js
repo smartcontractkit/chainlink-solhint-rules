@@ -3,6 +3,7 @@ const PrefixInternalFunctionsWithUnderscore = require('./rules/prefixInternalFun
 const PrefixPrivateFunctionsWithUnderscore = require('./rules/prefixPrivateFunctionsWithUnderscore.js');
 const PrefixStorageVariablesWithSUnderscore = require('./rules/prefixStorageVariablesWithSUnderscore.js');
 const PrefixImmutableVariablesWithI = require('./rules/prefixImmutableVariablesWithI');
+const PrefixInterfacesWithI = require('./rules/prefixInterfacesWithI');
 const AllCapsConstantStorageVariables = require('./rules/allCapsConstantStorageVariables.js');
 const NoHardhatImports = require('./rules/noHardhatImports.js');
 const InheritedConstructorArgsNotInContractDefinition = require('./rules/inheritedConstructorArgsNotInContractDefinition.js');
@@ -14,6 +15,7 @@ module.exports = [
   PrefixPrivateFunctionsWithUnderscore,
   PrefixStorageVariablesWithSUnderscore,
   PrefixImmutableVariablesWithI,
+  PrefixInterfacesWithI,
   AllCapsConstantStorageVariables,
   NoHardhatImports,
   InheritedConstructorArgsNotInContractDefinition,
