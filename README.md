@@ -41,6 +41,7 @@ Create a `.solhint.json` in your root project directory:
     "chainlink-solidity/prefix-private-functions-with-underscore": "warn",
     "chainlink-solidity/prefix-storage-variables-with-s-underscore": "warn",
     "chainlink-solidity/prefix-immutable-variables-with-i": "warn",
+    "chainlink-solidity/prefix-interfaces-with-i": "warn",
     "chainlink-solidity/all-caps-constant-storage-variables": "warn",
     "chainlink-solidity/no-hardhat-imports": "warn",
     "chainlink-solidity/inherited-constructor-args-not-in-contract-definition": "warn",
@@ -77,6 +78,7 @@ src/Counter.sol
 | `prefix-private-functions-with-underscore`              | Naming convention                                                                     |
 | `prefix-storage-variables-with-s-underscore`            | Naming convention                                                                     |
 | `prefix-immutable-variables-with-i`                     | Naming convention                                                                     |
+| `prefix-interfaces-with-i`                              | Naming convention                                                                     |
 | `all-caps-constant-storage-variables`                   | Naming convention                                                                     |
 | `no-hardhat-imports`                                    | Leftover `hardhat/*.sol` imports not allowed                                          |
 | `inherited-constructor-args-not-in-contract-definition` | Inherited contract constructor arguments should be specified in the constructor block |
