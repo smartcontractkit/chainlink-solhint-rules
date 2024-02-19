@@ -46,6 +46,7 @@ Create a `.solhint.json` in your root project directory:
     "chainlink-solidity/no-hardhat-imports": "warn",
     "chainlink-solidity/inherited-constructor-args-not-in-contract-definition": "warn",
     "chainlink-solidity/no-block-single-if-reverts": "warn",
+    "chainlink-solidity/named-mapping-parameters": "warn",
     "chainlink-solidity/explicit-returns": "warn"
   }
 }
@@ -73,13 +74,14 @@ src/Counter.sol
 ## Rules
 
 | Rule Id                                                 | Description                                                                           |
-|---------------------------------------------------------|---------------------------------------------------------------------------------------|
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | `prefix-internal-functions-with-underscore`             | Naming convention                                                                     |
 | `prefix-private-functions-with-underscore`              | Naming convention                                                                     |
 | `prefix-storage-variables-with-s-underscore`            | Naming convention                                                                     |
 | `prefix-immutable-variables-with-i`                     | Naming convention                                                                     |
 | `prefix-interfaces-with-i`                              | Naming convention                                                                     |
 | `all-caps-constant-storage-variables`                   | Naming convention                                                                     |
+| `named-mapping-parameters`                              | Naming convention                                                                     |
 | `no-hardhat-imports`                                    | Leftover `hardhat/*.sol` imports not allowed                                          |
 | `inherited-constructor-args-not-in-contract-definition` | Inherited contract constructor arguments should be specified in the constructor block |
 | `no-block-single-if-reverts`                            | Omit curly braces for single-line guard clauses                                       |
