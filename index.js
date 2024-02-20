@@ -9,6 +9,7 @@ const NoHardhatImports = require('./rules/noHardhatImports.js');
 const InheritedConstructorArgsNotInContractDefinition = require('./rules/inheritedConstructorArgsNotInContractDefinition.js');
 const NoBlockSingleIfReverts = require('./rules/noBlockSingleIfReverts.js');
 const ExplicitReturns = require('./rules/explicitReturns.js');
+const NamedMappingParameters = require('./rules/namedMappingParameters.js');
 
 module.exports = [
   PrefixInternalFunctionsWithUnderscore,
@@ -21,4 +22,5 @@ module.exports = [
   InheritedConstructorArgsNotInContractDefinition,
   NoBlockSingleIfReverts,
   ExplicitReturns,
+  NamedMappingParameters
 ];
